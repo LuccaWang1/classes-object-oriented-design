@@ -51,10 +51,21 @@ def make_melon_types():
 
     all_melon_types = []
 
-    # Fill in the rest
-    # self.name muskmelon
-
-    #all_melon_types.append
+    musk = MelonType("musk", "Muskmelon", 1998, "green", True, True)
+    musk.add_pairing("mint")
+    all_melon_types.append(musk)
+    
+    cas = MelonType("cas", "Casaba", 2003, "orange", True, False)
+    musk.add_pairing("strawberries and mint")
+    all_melon_types.append(cas)
+    
+    cren = MelonType("cren", "Crenshaw", 1996, "green", True, False)
+    cren.add_pairing("prosciutto")
+    all_melon_types(cren)
+    
+    yw = MelonType("YW", "Yellow Watermelon", 2013, "yellow", True, True)
+    yw.add_pairing("ice cream")
+    all_melon_types.append(yw)
 
     return all_melon_types
 
@@ -86,7 +97,7 @@ def make_melons(melon_types):
     """Returns a list of Melon objects."""
     # Fill in the rest
 
-    
+
 def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
     # Fill in the rest
