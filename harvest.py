@@ -51,30 +51,45 @@ def make_melon_types():
 
     all_melon_types = []
 
-    musk = MelonType("musk", "Muskmelon", 1998, "green", True, True)
+    # order is: self, code, first_harvest, color, is_seedless, is_bestseller, name
+
+    musk = MelonType("musk", 1998, "green", True, True, "Muskmelon")
     musk.add_pairing("mint")
     all_melon_types.append(musk)
     
-    cas = MelonType("cas", "Casaba", 2003, "orange", True, False)
-    musk.add_pairing("strawberries and mint")
+    cas = MelonType("cas", 2003, "orange", True, False, "Casaba")
+    cas.add_pairing("strawberries")
+    cas.add_pairing("mint")
     all_melon_types.append(cas)
     
-    cren = MelonType("cren", "Crenshaw", 1996, "green", True, False)
+    cren = MelonType("cren", 1996, "green", True, False, "Crenshaw")
     cren.add_pairing("prosciutto")
-    all_melon_types(cren)
+    all_melon_types.append(cren)
     
-    yw = MelonType("YW", "Yellow Watermelon", 2013, "yellow", True, True)
+    yw = MelonType("YW", 2013, "yellow", True, True, "Yellow Watermelon")
     yw.add_pairing("ice cream")
     all_melon_types.append(yw)
 
     return all_melon_types
 
+melon_types_woo = make_melon_types()
+# info is then stored in variable
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
+    # all_melon_types = Muskmelon, Casaba, Crenshaw, Yellow Watermelon
+    #self.pairings = [(appended to already)] -> yw.add_pairing("ice cream")
+    #call the class with the init with the list of pairings 
 
-    # Fill in the rest
-    self.name = f"{self.name} this pairs well with {pairing}"
+    for melon in melon_types:
+        print(f"{melon.name} pairs with")
+        for pairing in melon.pairings:  
+            print(f"-{pairing}")
+    
+    # print(self.name = f"{self.name} pairs well with /n- {pairing[0]} /n- {painting[1]}")
+
+    return None
+print_pairing_info(melon_types_woo)
 
 
 def make_melon_type_lookup(melon_types):
