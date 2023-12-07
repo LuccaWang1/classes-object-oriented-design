@@ -28,6 +28,9 @@ class MelonType:
         self.is_bestseller = is_bestseller 
         self.name = name
 
+    def __repr__(self):
+        return f"<{self.code}: {self.name}>"
+
     def add_pairing(self, pairing):
         """Add a food pairing to the instance's pairings list."""
 
@@ -91,10 +94,33 @@ def print_pairing_info(melon_types):
     return None
 print_pairing_info(melon_types_woo)
 
+# melon_types_woo = make_melon_types()
+# info is then stored in variable
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
     # Fill in the rest
+    melon_type_dict = {}
+    # melon_key = melon_types[0]
+    
+    # melon type code = melon_type_woo[1]
+    # expected output YW: Yellow Watermelon
+    # for loop -> for YW not in melon_type_dict 
+    #for idx, will_be_key in range(len(melon_types)):
+        # for melon_key not in melon_type_dict:
+        #     melon_type_dict[melon_key] = []
+        #     melon_type_dict[melon_key].append[]
+    for melon in melon_types:
+        if melon.code not in melon_type_dict:
+            melon_type_dict[melon.code] = melon
+
+    # melon_type_dict[key] = "Melon Type"
+    # >>> (output) -> melon_type_dict { YW: "Yellow Watermelon"}
+    # return a dictionary whose keys are reporting codes, values are melon type for that code
+
+    return melon_type_dict
+
+make_melon_type_lookup(melon_types_woo)
 
 
 ############
